@@ -2,9 +2,77 @@
 # -*- coding: utf-8 -*-
 import random, sys, os, subprocess
 
+# TODO: add types, add fuzzy matching, require use in a sentence
+# verbs: handle conjugations (see below)
+# nouns: separate singular and plural
 pairs = [
-	('kuiamrisha', 'to strengthen'),
-	('kuendea', 'to approach someone'),
+	('-imarisha', 'to strengthen'),
+	('-endea', 'to approach someone'),
+	('fursa', 'opportunity'),
+	('-kimbiza', 'to chase'),
+	('-amrisha', 'to command, to order'),
+	('silaha', 'weapon'),
+	('ujinga', 'stupidity, ignorance'),
+	('hatua', 'steps, measures'),
+	('-shambulia', 'to attack, to invade'),
+	('alama', 'sign, signal, clue'),
+	('tukio', 'event, happening'),
+	('-kaza', 'to fasten, to make tight'),
+	('(ma)pato', 'achievement(s), acquisition(s)'),
+	('dhambi', 'sin, offense'),
+	('(ma)dhara', 'damage(s), injury(s)'),
+	('-sisimka', 'to be excited, to make the blood race'),
+	('(ma)bwawa', 'pool(s), dam(s)'),
+	('-nafuu', 'improve, recover, make progress'),
+	('(ma)lengo', 'goal, aim'),
+	('shabaha', 'target, aim, intention, ambition'),
+	('fimbo', 'stick'),
+	('utulivu', 'peace, calmness'),
+	('-vunja', 'break'),
+	('gharama', 'cost'),
+	('-sikitika', 'to be sad'),
+]
+
+# 1) active 2) passive
+# 3) applicative active 4) applicative passive
+# 5) causative 6) stative 7) associative
+verbs = [
+	(
+	 ('-weka', 'to put'),
+	 ('-wekwa', 'to be put'),
+	 ('-wekea', 'to put for someone'),
+	 ('-wekewa', 'to be put for someone'), # aliwekewa sumu
+	 ('-wekesha', 'to cause to put'),
+     ('-wekeka', 'to be placeable'),
+     ('-wekana', 'to be placeable together'),
+	),
+	(
+	 ('-penda', 'to love'),
+	 ('-pendwa', 'to be loved'),
+	 ('-pendea', 'to attract someone (?)'),
+	 (None, None),
+	 ('-pendeza', 'to cause to love, to cause someone to be attracted'),
+	 ('-pendeka', 'to be loveable'),
+	 ('-pendana', 'to love each other'),
+	),
+	(
+	 ('-pata', 'to get'),
+	 ('-patiwa', 'to be given'),
+	 ('-patia', 'to get for'),
+	 ('-patiwa', 'to be provided for'), # alipatiwa na mfalme mahitaji yake
+	 (None, None),   # jumanne says "-patisha" isn't a word
+	 (None, None), # not "-patika" because it adds "-na" suffix
+	 ('-patikana', 'to be available'),
+	),
+	(
+	 ('-pika', 'to cook'),
+	 ('-pikwa', 'to be cooked'),
+	 ('-pikia', 'to cook for'),
+	 ('-pikiwa', 'to be cooked for'),
+	 ('-pikisha', 'to cause to cook'), # alimpikisha chakula
+	 ('-pikika', 'cookable'),
+	 (None, None),
+	),
 ]
 
 num_correct = 0
