@@ -21,7 +21,7 @@ pairs = [
 	('(ma)pato', 'achievement(s), acquisition(s)'),
 	('dhambi', 'sin, offense'),
 	('(ma)dhara', 'damage(s), injury(s)'),
-	('-sisimka', 'to be excited, to make the blood race'),
+	('-sisimua', 'to excite, to thrill'),
 	('(ma)bwawa', 'pool(s), dam(s)'),
 	('-nafuu', 'improve, recover, make progress'),
 	('(ma)lengo', 'goal, aim'),
@@ -31,11 +31,14 @@ pairs = [
 	('-vunja', 'break'),
 	('gharama', 'cost'),
 	('-sikitika', 'to be sad'),
+	('uchi', 'naked'),
+	('huruma', 'compassion'),
 ]
 
 # 1) active 2) passive
 # 3) applicative active 4) applicative passive
 # 5) causative 6) stative 7) associative
+# 8) negative infinitive
 verbs = [
 	(
 	 ('-weka', 'to put'),
@@ -45,6 +48,7 @@ verbs = [
 	 ('-wekesha', 'to cause to put'),
      ('-wekeka', 'to be placeable'),
      ('-wekana', 'to be placeable together'),
+     ('kutoweka', 'to not put'),
 	),
 	(
 	 ('-penda', 'to love'),
@@ -54,6 +58,7 @@ verbs = [
 	 ('-pendeza', 'to cause to love, to cause someone to be attracted'),
 	 ('-pendeka', 'to be loveable'),
 	 ('-pendana', 'to love each other'),
+     ('kutopenda', 'to not love'),
 	),
 	(
 	 ('-pata', 'to get'),
@@ -63,6 +68,7 @@ verbs = [
 	 (None, None),   # jumanne says "-patisha" isn't a word
 	 (None, None), # not "-patika" because it adds "-na" suffix
 	 ('-patikana', 'to be available'),
+     ('kutopata', 'to not get'),
 	),
 	(
 	 ('-pika', 'to cook'),
@@ -72,6 +78,7 @@ verbs = [
 	 ('-pikisha', 'to cause to cook'), # alimpikisha chakula
 	 ('-pikika', 'cookable'),
 	 (None, None),
+     ('kutopika', 'to not cook'),
 	),
 ]
 
